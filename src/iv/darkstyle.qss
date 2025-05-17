@@ -1,0 +1,90 @@
+/* QDarkStyleSheet - Dark Style Sheet for Qt Applications
+   Copyright (c) 2014-2015 Colin Duquesnoy
+   MIT License
+*/
+
+QMainWindow {
+    background-color: #19232D;
+    color: #F0F0F0;
+}
+
+QWidget {
+    background-color: #19232D;
+    color: #F0F0F0;
+    selection-background-color: #1464A0;
+    selection-color: #F0F0F0;
+}
+
+QMenuBar {
+    background-color: #19232D;
+    color: #F0F0F0;
+}
+
+QMenuBar::item:selected {
+    background-color: #1464A0;
+}
+
+QMenu {
+    background-color: #19232D;
+    color: #F0F0F0;
+    border: 1px solid #76797C;
+}
+
+QMenu::item:selected {
+    background-color: #1464A0;
+}
+
+QToolBar {
+    background-color: #19232D;
+    border: none;
+}
+
+QToolButton {
+    background-color: #19232D;
+    color: #F0F0F0;
+    border: none;
+}
+
+QToolButton:hover {
+    background-color: #1464A0;
+}
+
+QStatusBar {
+    background-color: #19232D;
+    color: #F0F0F0;
+}
+
+QScrollBar:vertical {
+    background-color: #19232D;
+    width: 15px;
+    margin: 15px 3px 15px 3px;
+    border: 1px solid #76797C;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #1464A0;
+    min-height: 5px;
+    border-radius: 4px;
+}
+
+QScrollBar::add-line:vertical {
+    margin: 3px 0px 3px 0px;
+    border-image: url(:/qss_icons/rc/down_arrow_disabled.png);
+    height: 10px;
+    width: 10px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:vertical {
+    margin: 3px 0px 3px 0px;
+    border-image: url(:/qss_icons/rc/up_arrow_disabled.png);
+    height: 10px;
+    width: 10px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;
+} 
