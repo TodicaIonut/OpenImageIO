@@ -19,6 +19,7 @@
 #include <iterator>
 
 #include <QApplication>
+#include <QFile>
 
 #include "imageviewer.h"
 #include <OpenImageIO/argparse.h>
@@ -73,6 +74,10 @@ getargs(int argc, char* argv[])
       .metavar("STRING")
       .defaultval("")
       .action(ArgParse::store());
+    ap.arg("--dark")
+      .help("Enable dark mode")
+      .dest("dark_mode")
+      .store_true();
     
     ap.parse(argc, (const char**)argv);
     return ap;
@@ -108,6 +113,15 @@ main(int argc, char* argv[])
     // LG
     //    Q_INIT_RESOURCE(iv);
     QApplication app(argc, argv);
+
+    // Apply dark mode if requested
+    if (ap["dark_mode"].get<int>()) {
+        QFile styleFile(":/darkstyle.qss");
+        if (styleFile.open(QFile::ReadOnly)) {
+            QString styleSheet = QLatin1String(styleFile.readAll());
+            app.setStyleSheet(styleSheet);
+        }
+    }
 
     std::string color_space = ap["image-color-space"].as_string("");
     std::string display     = ap["display"].as_string("");
