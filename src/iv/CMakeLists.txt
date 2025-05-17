@@ -14,7 +14,7 @@ check_is_enabled (iv iv_enabled)
 if (iv_enabled AND (Qt5_FOUND OR Qt6_FOUND) AND OPENGL_FOUND)
     qt5_add_resources(iv_SRCS
         iv.qrc
-    )
+    ) 
     
     fancy_add_executable (
         SOURCES ${iv_SRCS}
